@@ -31,11 +31,19 @@ Then('I should navigate to the {string} page', function(page) {
 });
 
 
-Then('I should see the {string} on the page', function(text) {
+Then('I should see the {string} on the {string}', function(text, page) {
   genericOperations.checkVisibility(text);
 });
 
 
 Then('I should not see the {string} on the page', function(locator) {
   genericOperations.checkInvisibility(locator);
+});
+
+When('I click on the {string} icon on the footer section', function(locator) {
+  genericOperations.iClickButtonByXpath(locator);
+});
+
+Then('I should see the {string} on the page', function(locator) {
+
 });

@@ -44,6 +44,10 @@ class GenericOperations {
   checkInvisibility(locator) {
     webElement.elementIsNotDisplayed(locators[locator]);
   }
+
+  iClickButtonByXpath(text) {
+    webXpath.removeTargetAndClickByXpath(text);
+  }
 }
 
 export default GenericOperations;

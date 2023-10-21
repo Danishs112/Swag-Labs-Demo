@@ -5,5 +5,7 @@
     "hamburger icon":"#react-burger-menu-btn",
     "sidebar":"div.bm-menu-wrap",
     "close button":"#react-burger-cross-btn",
-    "cart icon":"#shopping_cart_container"
+    "cart icon":"#shopping_cart_container",
+    "footer":"footer.footer",
+    "footerheading":"div.footer_copy"
 }

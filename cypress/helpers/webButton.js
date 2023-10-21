@@ -38,6 +38,14 @@ class WebButton {
       cy.log('-->Error: The element couldn\'t get checked due to:'+ err);
     };
   }
+
+  removeTargetAndClick(element) {
+    cy.get(element).invoke('removeAttr', 'target').click().then(function() {
+      cy.log('The element got clicked.');
+    }, function(err) {
+      cy.log('--->Error: The element couldn\'t get clicked due to: ' + err);
+    });
+  }
 }
 
 export default WebButton;

@@ -1,3 +1,4 @@
 {
-    "dashboard":"/inventory.html"
+    "dashboard":"/inventory.html",
+    "cart":"/cart.html"
 }

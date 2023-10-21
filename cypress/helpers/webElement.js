@@ -1,7 +1,7 @@
 class WebElement {
   elementCount(element) {
     try {
-      return element.its('length').then(function(size) {
+      return cy.get(element).its('length').then(function(size) {
         return new Promise(function(resolve, reject) {
           resolve(size);
         });
@@ -13,7 +13,7 @@ class WebElement {
 
   elementIsPresent(element) {
     try {
-      if (element.should('exist')) {
+      if (cy.get(element).should('exist')) {
         cy.log('The Element: ' + element + ' is Present in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is not Present in the webpage.');
@@ -25,7 +25,7 @@ class WebElement {
 
   elementIsNotPresent(element) {
     try {
-      if (element.should('not.exist')) {
+      if (cy.get(element).should('not.exist')) {
         cy.log('The Element: ' + element + ' is Not Present in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is Present in the webpage.');
@@ -36,8 +36,9 @@ class WebElement {
   }
 
   elementIsDisplayed(element) {
+    cy.log('element', element);
     try {
-      if (element.should('be.visible')) {
+      if (cy.get(element).should('be.visible')) {
         cy.log('The Element: ' + element + ' is Displyaed in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is not Displayed in the webpage.');
@@ -49,7 +50,7 @@ class WebElement {
 
   elementIsNotDisplayed(element) {
     try {
-      if (element.should('not.be.visible')) {
+      if (cy.get(element).should('not.be.visible')) {
         cy.log('The Element: ' + element + ' is not Displyaed in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is Displayed in the webpage.');
@@ -61,7 +62,7 @@ class WebElement {
 
   elementIsEnabled(element) {
     try {
-      if (element.should('not.be.disabled')) {
+      if (cy.get(element).should('not.be.disabled')) {
         cy.log('The Element: ' + element + ' is Displyaed in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is not Displayed in the webpage.');
@@ -73,7 +74,7 @@ class WebElement {
 
   elementIsNotEnabled(element) {
     try {
-      if (element.should('be.disabled')) {
+      if (cy.get(element).should('be.disabled')) {
         cy.log('The Element: ' + element + ' is Displayed in the webpage.');
       } else {
         cy.log('The Element: ' + element + ' is not Displayed in the webpage.');
@@ -85,7 +86,7 @@ class WebElement {
 
 
   shouldHaveCSS(element, cssname, value) {
-    element.should('have.css', cssname, value).then(function(text) {
+    cy.get(element).should('have.css', cssname, value).then(function(text) {
       cy.log('The element have css value: ' + value);
     }, function(err) {
       cy.log('--->Error: The element dosn\'t have css expected css value due to: ' + err);
@@ -93,7 +94,7 @@ class WebElement {
   }
 
   getAttribute(element, attribute) {
-    element.invoke('attr', attribute).then(function(text) {
+    cy.get(element).invoke('attr', attribute).then(function(text) {
       cy.log('The attribute of element is captured which is: ' + text);
       return text;
     }, function(err) {

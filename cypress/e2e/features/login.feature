@@ -8,7 +8,7 @@ Feature: Login Page
         Then I should see "Swag Labs" text on the page
         When I fill "<userName>" on the "username" input field
         And I fill "<password>" on the "password" input field
-        And I click on the "Login" button on the page
+        And I click on the "Login button" on the "page"
         Then I should navigate to the "dashboard" page
 
         Examples:
@@ -21,7 +21,7 @@ Feature: Login Page
         Then I should see "Swag Labs" text on the page
         When I fill "<userName>" on the "username" input field
         And I fill "<password>" on the "password" input field
-        And I click on the "Login" button on the page
+        And I click on the "Login button" on the "page"
         Then I should see "<errorMessage>" text on the page
 
         Examples:

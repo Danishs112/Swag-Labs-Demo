@@ -1,0 +1,9 @@
+{
+    "username" : "#user-name",
+    "password":"#password",
+    "Login button":"#login-button",
+    "hamburger icon":"#react-burger-menu-btn",
+    "sidebar":"div.bm-menu-wrap",
+    "close button":"#react-burger-cross-btn",
+    "cart icon":"#shopping_cart_container"
+}

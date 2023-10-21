@@ -1,33 +1,41 @@
 import {Given, When, Then} from '@badeball/cypress-cucumber-preprocessor';
-import LoginPage from '../../pageObject/login';
-import CommonFile from '../../pageObject/commonFile';
+import GenericOperations from '../../pageObject/genericOperations';
 import Decryption from '../../utilities/decryption';
+
 import Url from '../../urls/url.json';
 
-const loginPage = new LoginPage();
-const genericOperation = new CommonFile();
+const genericOperations = new GenericOperations();
 const decode = new Decryption();
 
 
 Given('I am on the {string} page', function(page) {
-  loginPage.visit();
+  genericOperations.visit();
 });
 
 Then('I should see {string} text on the page', function(text) {
-  genericOperation.isTextVisibleXpath(text);
+  genericOperations.isTextVisibleXpath(text);
 });
 
 When('I fill {string} on the {string} input field', function(userName, locator) {
   const decondedUserName = decode.getDecodedString(userName);
-  genericOperation.iEnterValue(locator, decondedUserName);
+  genericOperations.iEnterValue(locator, decondedUserName);
 });
 
-When('I click on the {string} button on the page', function(button) {
-  genericOperation.iClickButton(button);
+When('I click on the {string} on the {string}', function(button, page) {
+  genericOperations.iClickButton(button);
 });
 
 Then('I should navigate to the {string} page', function(page) {
   const pageUrl = Url[page];
-  genericOperation.checkUrl(pageUrl);
+  genericOperations.checkUrl(pageUrl);
 });
 
+
+Then('I should see the {string} on the page', function(text) {
+  genericOperations.checkVisibility(text);
+});
+
+
+Then('I should not see the {string} on the page', function(locator) {
+  genericOperations.checkInvisibility(locator);
+});

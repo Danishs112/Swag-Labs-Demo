@@ -1,17 +1,24 @@
-import loginLocators from '../pages/loginLocators.json';
+import locators from '../pages/locators.json';
 import WebTextBox from '../helpers/webTextBox';
 import WebButton from '../helpers/webButton';
 import WebXpath from '../helpers/webXpath';
+import WebElement from '../helpers/webElement';
 import GenericActions from '../utilities/genericActions';
 
 const webTextBox = new WebTextBox();
 const webButton = new WebButton();
 const webXpath = new WebXpath();
 const genericActions = new GenericActions();
+const webElement = new WebElement();
 
-class CommonFile {
+
+class GenericOperations {
+  visit() {
+    genericActions.visit();
+  }
+
   iEnterValue(locator, text) {
-    webTextBox.typeText(loginLocators[locator], text);
+    webTextBox.typeText(locators[locator], text);
   }
 
   isTextVisibleXpath(text) {
@@ -23,12 +30,20 @@ class CommonFile {
   }
 
   iClickButton(locator) {
-    webButton.click(loginLocators[locator]);
+    webButton.click(locators[locator]);
   }
 
   checkUrl(url) {
     genericActions.checkUrl(url);
   }
+
+  checkVisibility(locator) {
+    webElement.elementIsDisplayed(locators[locator]);
+  }
+
+  checkInvisibility(locator) {
+    webElement.elementIsNotDisplayed(locators[locator]);
+  }
 }
 
-export default CommonFile;
+export default GenericOperations;

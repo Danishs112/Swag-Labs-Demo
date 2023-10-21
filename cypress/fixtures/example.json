@@ -1,6 +1,7 @@
 {
-  "admin_email": "IGFkbWluQHlvdXJzdG9yZS5jb20=",
-  "admin_password": "YWRtaW4=",
-  "invalid_email": "IGFkbWluQHlvdXJzdG9yZS5jb21=",
-  "invalid_password": "ZGFuaXNoc29tYQ=="
+  "validUsername": "c3RhbmRhcmRfdXNlcg==",
+  "validPassword": "c2VjcmV0X3NhdWNl",
+  "invalidUserame": "IGFkbWluQHlvdXJzdG9yZS5jb21=",
+  "invalidPassword": "ZGFuaXNoc29tYQ=="
 }
+

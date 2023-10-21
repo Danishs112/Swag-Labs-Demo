@@ -1,7 +1,5 @@
 {
-    "heading" : "div.page-title h1",
-    "subheading" : "div.title strong",
-    "email":"#Email",
-    "password":"#Password",
-    "remember me":"#RememberMe"
+    "username" : "#user-name",
+    "password":"#password",
+    "Login":"#login-button"
 }

@@ -27,6 +27,6 @@ module.exports = {
     'require-jsdoc': 0,
     'linebreak-style': 0,
     'new-cap': 0,
-    'max-len': ['error', {'code': 100}],
+    'max-len': ['error', {'code': 120}],
   },
 };

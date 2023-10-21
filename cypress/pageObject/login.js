@@ -1,4 +1,3 @@
-import LoginPageLocators from '../pages/loginPageLocators';
 import GenericActions from '../utilities/genericActions';
 import WebText from '../helpers/webText';
 import Decryption from '../utilities/decryption';

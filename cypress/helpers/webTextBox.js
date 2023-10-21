@@ -8,6 +8,8 @@ class WebTextBox {
   }
 
   typeText(element, data) {
+    cy.log('element', element);
+    cy.log('data', data);
     cy.get(element).clear().type(data).then(function() {
       cy.log('Typing of the field with value: ' + data);
     }, function(err) {

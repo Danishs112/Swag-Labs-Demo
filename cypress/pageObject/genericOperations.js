@@ -4,13 +4,14 @@ import WebButton from '../helpers/webButton';
 import WebXpath from '../helpers/webXpath';
 import WebElement from '../helpers/webElement';
 import GenericActions from '../utilities/genericActions';
+import WebSelectBox from '../helpers/webSelectBox';
 
 const webTextBox = new WebTextBox();
 const webButton = new WebButton();
 const webXpath = new WebXpath();
 const genericActions = new GenericActions();
 const webElement = new WebElement();
-
+const webSelectBox = new WebSelectBox();
 
 class GenericOperations {
   visit() {
@@ -47,6 +48,10 @@ class GenericOperations {
 
   iClickButtonByXpath(text) {
     webXpath.removeTargetAndClickByXpath(text);
+  }
+
+  iSelectTextFromDropDown(locator, text) {
+    webSelectBox.selectDropDownUsingText(locators[locator], text);
   }
 }
 

@@ -7,5 +7,7 @@
     "close button":"#react-burger-cross-btn",
     "cart icon":"#shopping_cart_container",
     "footer":"footer.footer",
-    "footerheading":"div.footer_copy"
+    "footerheading":"div.footer_copy",
+    "product sort":"select.product_sort_container",
+    "cards":"div.inventory_list div.inventory_item"
 }

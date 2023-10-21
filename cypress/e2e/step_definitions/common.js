@@ -44,6 +44,11 @@ When('I click on the {string} icon on the footer section', function(locator) {
   genericOperations.iClickButtonByXpath(locator);
 });
 
-Then('I should see the {string} on the page', function(locator) {
+When('I select {string} on the {string} dropdown', function(text, locator) {
+  genericOperations.iSelectTextFromDropDown(locator, text);
+});
 
+
+Then('I should see the {string} according to that filter', function(locator) {
+  genericOperations.checkVisibility(locator);
 });

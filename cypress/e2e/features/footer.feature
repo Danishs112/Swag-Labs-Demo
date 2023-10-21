@@ -4,7 +4,7 @@ Feature: Footer Section
 
     Scenario Outline: Footer Section - checking the visibility of items on the footer section
         Given I login into dashboard page
-        Then I should see the "footer" on the page
+        Then I should see the "footer" on the "page"
         When I click on the "<socialMedia>" icon on the footer section
         Then I should navigate to the "<socialMedia>" page
 
@@ -16,6 +16,6 @@ Feature: Footer Section
 
     Scenario: Footer Section - checking the visibility of heading on the footer section
         Given I login into dashboard page
-        Then I should see the "footer" on the page
+        Then I should see the "footer" on the "page"
         And I should see the "footerheading" on the "footer"
 

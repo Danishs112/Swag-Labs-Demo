@@ -1,7 +1,8 @@
 Feature: Login Page
 
     As a tester, I want to test the "https://www.saucedemo.com/" application Login page
-
+   
+    @loginpage @sanitysuite @tracker-10
     Scenario Outline: Login Page - checking the functionality of the Login Page with valid credentials
         Given I am on the "Login" page
         Then I should see "Swag Labs" text on the page
@@ -13,7 +14,8 @@ Feature: Login Page
         Examples:
             | userName      | password      |
             | validUsername | validPassword |
-
+    
+    @loginpage @sanitysuite @tracker-11
     Scenario Outline: Login Page - checking the functionality of the Login Page with invalid credentials
         Given I am on the "Login" page
         Then I should see "Swag Labs" text on the page

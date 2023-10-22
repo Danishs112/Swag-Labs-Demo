@@ -2,6 +2,7 @@ Feature: Footer Section
 
     As a tester, I want to test the "https://www.saucedemo.com/" application Footer Section
 
+    @footersection @sanitysuite @tracker-03
     Scenario Outline: Footer Section - checking the visibility of items on the footer section
         Given I login into dashboard page
         Then I should see the "footer" on the "page"
@@ -13,7 +14,8 @@ Feature: Footer Section
             | Twitter     |
             | Facebook    |
             | LinkedIn    |
-
+   
+    @footersection @regressionsuite @tracker-04
     Scenario: Footer Section - checking the visibility of heading on the footer section
         Given I login into dashboard page
         Then I should see the "footer" on the "page"

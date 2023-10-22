@@ -13,3 +13,15 @@ Given('I login into dashboard page', function() {
   genericOperations.iEnterValue('password', decodedPassword);
   genericOperations.iClickButton('Login button');
 });
+
+Then('I should see all the product {string} on the page', function(locator) {
+  genericOperations.checkVisibility(locator);
+});
+
+Then('I should see all the {string} on the product cards', function(locator) {
+  genericOperations.checkVisibility(locator);
+});
+
+When('I click on {string} on the product card', function(locator) {
+  genericOperations.iClickButton(locator);
+});

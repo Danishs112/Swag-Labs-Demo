@@ -9,5 +9,11 @@
     "footer":"footer.footer",
     "footerheading":"div.footer_copy",
     "product sort":"select.product_sort_container",
-    "cards":"div.inventory_list div.inventory_item"
+    "cards":"div.inventory_list div.inventory_item",
+    "product image":"div.inventory_item_img",
+    "product name":"div.inventory_item_name ",
+    "product description":"div.inventory_item_desc",
+    "product prize":"div.inventory_item_price",
+    "add to card button":"button.btn_inventory",
+    "first product image":"div.inventory_item a:first"
 }

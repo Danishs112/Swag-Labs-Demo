@@ -9,7 +9,7 @@ Feature: Header Section
     Scenario: Header Section - checking the functionality of hamburger icon on the header section
         Given I login into dashboard page
         When I click on the "hamburger icon" on the "page"
-    Then I should see the "sidebar" on the "page"
+        Then I should see the "sidebar" on the "page"
         When I click on the "close button" on the "sidebar"
         Then I should not see the "sidebar" on the page
 

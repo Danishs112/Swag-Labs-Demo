@@ -1,5 +1,5 @@
 {
-  "name": "Swag Labs Demo Application",
+  "name": "swag-labs",
   "version": "2.2.0",
   "description": "This project is framework design developed in cypress.io with cucumber",
   "main": "index.js",

@@ -32,25 +32,25 @@ The test scenarios covered are - Login page, header section, footer section and 
 
 Open the Terminal or Command Prompt and go to Directory  and run below command:
 
-  For running the scenarios on browser
+ For running the scenarios on browser
 
- #       npx cypresss open
+## npx cypresss open
 
-    For running the scenarios on headless mode
+For running the scenarios on headless mode
 
-#        npm run cypress:headless
+## npm run cypress:headless
 
-    For running the scenarios using tag
+For running the scenarios using tag
         
-  #      npm run cypress:execution-tags
+ ## npm run cypress:execution-tags
 
-    For showing the report after the execution of scenario
+For showing the report after the execution of scenario
         
- #       npm run aftertest
+## npm run aftertest
 
-    For executing the report after the test run 
+For executing the report after the test run 
 
-#       npm run tests
+## npm run tests
 
     
 

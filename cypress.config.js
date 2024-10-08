@@ -1,4 +1,4 @@
-const {defineConfig} = require('cypress');
+const { defineConfig } = require('cypress');
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
 const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild');
@@ -10,10 +10,10 @@ async function setupNodeEvents(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
   on(
-      'file:preprocessor',
-      createBundler({
-        plugins: [createEsbuildPlugin.default(config)],
-      }),
+    'file:preprocessor',
+    createBundler({
+      plugins: [createEsbuildPlugin.default(config)],
+    }),
   );
   allureWriter(on, config);
 
@@ -29,6 +29,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportHeight: 900,
     viewportWidth: 1440,
+    brower: "edge",
     env: {
       allureReuseAfterSpec: true,
     },

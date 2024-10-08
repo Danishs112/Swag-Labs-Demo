@@ -7,6 +7,8 @@
     "cypress:runner": "cypress open",
     "cypress:headless": "cypress run",
     "cypress:execution": "cypress run --env allure=true",
+    "cy:run:electron": "cypress open  --browser electron",
+    "cy:run:edge": "cypress open  --browser edge",
     "cypress:execution-tags": "cypress run --env tags=@regresionsuite or @sanitysuite",
     "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
     "beforetest": "npm run clean:folders",

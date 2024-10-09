@@ -34,23 +34,32 @@ Open the Terminal or Command Prompt and go to Directory  and run below command:
 
  ## For running the scenarios on browser
 
+  ```sh
    npx cypresss open
+   ```
 
 ## For running the scenarios on headless mode
  
+   ```sh
    npm run cypress:headless
+   ```
 
 ## For running the scenarios using tag
-        
+
+   ```sh   
    npm run cypress:execution-tags
+   ```
 
 ## For showing the report after the execution of scenario
-        
+   ```sh       
    npm run aftertest
+   ```
 
 ## For executing the report after the test run 
 
+  ```sh  
   npm run tests
+  ```
 
     
 

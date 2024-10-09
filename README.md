@@ -28,7 +28,7 @@ The test scenarios covered are - Login page, header section, footer section and 
     (live internet connection required to install these dependencies and make sure node.js is installed and included in PATH environment variable.)
 
 
-## Running Tests:
+### Running Tests:
 
 Open the Terminal or Command Prompt and go to Directory  and run below command:
 

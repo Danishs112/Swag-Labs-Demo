@@ -1,0 +1,31 @@
+name: Generate Report CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  generate-report:
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Install Allure CI
+        run: npm install -g allure-commandline --save-dev
+
+      - name: Run test
+        run: npm run test
+
+      - name: Upload Allure Report
+        if: always
+        uses: actions/upload-artifacts@v4
+        with:
+          name: allure-report
+          path: allure-report

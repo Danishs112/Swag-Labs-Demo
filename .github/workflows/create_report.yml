@@ -24,7 +24,7 @@ jobs:
         run: npm run test
 
       - name: Upload Allure Report
-        if: always
+        if: always()
         uses: actions/upload-artifacts@v4
         with:
           name: allure-report

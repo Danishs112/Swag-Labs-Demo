@@ -14,7 +14,8 @@
     "beforetest": "npm run clean:folders",
     "allure:report": "allure generate allure-results --clean && allure open allure-report",
     "tests": "npm run beforetest && npm run cypress:execution || npm run aftertest",
-    "aftertest": "npm run allure:report"
+    "aftertest": "npm run allure:report",
+    "format": "prettier --config .prettierrc '**/*.js' --write"
   },
   "keywords": [
     "cypress"
@@ -24,15 +25,19 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@eslint/js": "10.0.1",
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "allure-commandline": "^2.24.0",
     "cypress": "^10.10.0",
     "esbuild": "^0.15.11",
-    "eslint": "^8.49.0",
+    "eslint": "8.57.1",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-cypress": "6.1.0",
+    "globals": "17.3.0",
     "mocha-allure-reporter": "^1.4.0",
     "multiple-cucumber-html-reporter": "^3.0.1",
-    "prettier": "^3.0.3"
+    "prettier": "3.8.1"
   },
   "dependencies": {
     "base-64": "^1.0.0",

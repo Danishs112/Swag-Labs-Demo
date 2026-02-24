@@ -61,5 +61,9 @@ Open the Terminal or Command Prompt and go to Directory  and run below command:
   npm run tests
   ```
 
-    
+#### For doing the formatting in the project
+
+  ```sh  
+  npm run format
+  ```
 

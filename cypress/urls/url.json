@@ -1,8 +1,8 @@
 {
-    "dashboard":"/inventory.html",
-    "cart":"/cart.html",
-    "product":"/inventory-item.html?id",
-    "Twitter":"https://twitter.com/saucelabs",
-    "Facebook":"https://www.facebook.com/saucelabs",
-    "LinkedIn":"https://www.linkedin.com/company/sauce-labs/"
+    "dashboard": "/inventory.html",
+    "cart": "/cart.html",
+    "product": "/inventory-item.html?id",
+    "Twitter": "https://x.com/saucelabs",
+    "Facebook": "https://www.facebook.com",
+    "LinkedIn": "https://www.linkedin.com/company/sauce-labs/"
 }

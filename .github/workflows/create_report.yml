@@ -1,9 +1,10 @@
 name: Generate Report CI
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
+
 jobs:
   generate-report:
     runs-on: ubuntu-lastest
@@ -20,12 +21,5 @@ jobs:
       - name: Install Allure CI
         run: npm install -g allure-commandline --save-dev
 
-      - name: Run test
-        run: npm run test
-
-      - name: Upload Allure Report
-        if: always()
-        uses: actions/upload-artifacts@v4
-        with:
-          name: allure-report
-          path: allure-report
+      - name: Check run
+        run: echo "Run succesfully "

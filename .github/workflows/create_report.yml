@@ -33,5 +33,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
-          force_orphan: true
-          enable_jekyll: false
+          destination_dir: build-${{ github.run_number }}
+          force_orphan: false

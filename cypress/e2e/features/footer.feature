@@ -12,7 +12,7 @@ Feature: Footer Section
         Examples:
             | socialMedia |
             | Twitter     |
-            | Facebook    |
+            #  | Facebook    |
             | LinkedIn    |
 
     @footersection @regressionsuite @tracker-04

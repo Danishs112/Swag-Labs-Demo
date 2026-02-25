@@ -15,6 +15,7 @@
     "allure:report": "allure generate allure-results --clean && allure open allure-report",
     "tests": "npm run beforetest && npm run cypress:execution || npm run aftertest",
     "aftertest": "npm run allure:report",
+    "allure:generate": "allure generate allure-results --clean",
     "format": "prettier --config .prettierrc '**/*.js' --write",
     "ci:tests": "npm run beforetest && npm run cypress:execution || npm run allure:generate"
   },

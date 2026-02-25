@@ -21,5 +21,12 @@ jobs:
       - name: Install Allure CI
         run: npm install -g allure-commandline --save-dev
 
-      - name: Check run
-        run: echo "Run succesfully "
+      - name: Run tests
+        run: npm run tests
+
+      - name: Upload Report
+        if: always()
+        uses: actions/upload-artifacts@v4
+        with:
+          name: allure-report
+          path: allure-report

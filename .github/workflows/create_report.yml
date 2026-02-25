@@ -22,7 +22,7 @@ jobs:
         run: npm install -g allure-commandline --save-dev
 
       - name: Run tests
-        run: npm run tests
+        run: npm run ci:tests
 
       - name: Upload Report
         if: always()

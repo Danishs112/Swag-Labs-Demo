@@ -1,4 +1,4 @@
-name: Generate Report CI
+name: Generate Report & Deploy Report
 on:
   push:
     branches:
@@ -9,53 +9,55 @@ permissions:
   contents: write
 
 jobs:
-  install_dependencies:
+  install_and_lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Repo Checkout
+      - &node_setup
+        name: Repo Checkout
         uses: actions/checkout@v3
-      - name: Install Node.js
+      - &node_install
+        name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: "npm"
-      - name: Install Depedencies
+      - &npm_ci
+        name: Install Depedencies
         run: npm ci
-      - name: Install Allure CI
-        run: npm install -g allure-commandline --save-dev
-
-  formatting:
-    needs: install_dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Repo Checkout
-        uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "npm"
       - name: lint
         run: npm run format
 
-  run-test:
-    needs: formatting
+  run-tests:
+    needs: install_and_lint
     runs-on: ubuntu-latest
     steps:
-      - name: Repo Checkout
-        uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "npm"
+      - *node_setup
+      - *node_install
+      - *npm_ci
+      - name: Install Allure CI
+        run: npm install -g allure-commandline --save-dev
+
       - name: Run tests
-        uses: npm run ci:tests
+        run: npm run ci:tests
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
 
   deploy:
-    needs: run-test
+    needs: run-tests
     runs-on: ubuntu-latest
     steps:
+      - *node_setup
+
+      - name: Download Allure Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: always()

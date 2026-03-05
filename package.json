@@ -18,7 +18,7 @@
     "allure:generate": "allure generate allure-results --clean",
     "format": "prettier --config .prettierrc '**/*.js' --write",
     "ci:tests": "npm run beforetest && npm run cypress:parallel; npm run allure:generate",
-     "cypress:parallel": "cypress-parallel -s cypress:execution -t 4 -d 'cypress/e2e/**/*.feature'"
+    "cypress:parallel": "cypress-parallel -s cypress:execution -t 4 -d 'cypress/e2e/**/*.feature'"
   },
   "keywords": [
     "cypress"

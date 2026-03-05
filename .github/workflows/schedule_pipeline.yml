@@ -1,4 +1,4 @@
-name: Generate Report & Deploy Report
+name: Schedule Pipeline & Deploy Report
 on:
   schedule:
     - cron: 0 01 * * 1-5

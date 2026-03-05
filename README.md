@@ -39,31 +39,35 @@ Open the Terminal or Command Prompt and go to Directory  and run below command:
    ```
 
 #### For running the scenarios on headless mode
- 
+
    ```sh
    npm run cypress:headless
    ```
 
 #### For running the scenarios using tag
 
-   ```sh   
+   ```sh
    npm run cypress:execution-tags
    ```
 
 #### For showing the report after the execution of scenario
-   ```sh       
+   ```sh
    npm run aftertest
    ```
 
-#### For executing the report after the test run 
+#### For executing the report after the test run
 
-  ```sh  
+  ```sh
   npm run tests
   ```
 
 #### For doing the formatting in the project
 
-  ```sh  
+  ```sh
   npm run format
   ```
+#### For running the testcases parallelly
 
+  ```sh
+  npm run cypress:parallel
+  ```

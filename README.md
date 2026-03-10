@@ -9,7 +9,7 @@ The test scenarios covered are - Login page, header section, footer section and 
 
 ## Technologies used:
 
-1. Javascript.
+1. [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 2. [Node.js](https://nodejs.org/) v18.6.0 javascript execution engine.
 3. [Cypress.io](https://webdriver.io/) is a next generation front end testing tool built for the modern web.
 4. [Cucumber](https://cucumber.io/) which helps us to create BDD framework with cypress.io.

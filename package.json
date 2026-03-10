@@ -18,7 +18,14 @@
     "allure:generate": "allure generate allure-results --clean",
     "format": "prettier --config .prettierrc '**/*.js' --write",
     "ci:tests": "npm run beforetest && npm run cypress:parallel; npm run allure:generate",
-    "cypress:parallel": "cypress-parallel -s cypress:execution -t 4 -d 'cypress/e2e/**/*.feature'"
+    "cypress:parallel": "cypress-parallel -s cypress:execution -t 4 -d 'cypress/e2e/**/*.feature'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "cypress/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "keywords": [
     "cypress"
@@ -46,6 +53,7 @@
     "base-64": "^1.0.0",
     "cypress-parallel": "0.15.0",
     "cypress-xpath": "^2.0.1",
+    "husky": "9.1.7",
     "winston": "^3.8.2"
   }
 }

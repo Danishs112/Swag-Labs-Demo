@@ -50,6 +50,12 @@ Open the Terminal or Command Prompt and go to Directory  and run below command:
    npm run cypress:execution-tags
    ```
 
+#### For running the smoke suite using tag
+
+   ```sh
+   npm run cypress:smoke
+   ```
+
 #### For showing the report after the execution of scenario
    ```sh
    npm run aftertest

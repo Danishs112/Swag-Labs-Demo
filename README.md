@@ -15,7 +15,8 @@ The test scenarios covered are - Login page, header section, footer section and 
 4. [Cucumber](https://cucumber.io/) which helps us to create BDD framework with cypress.io.
 5. [Allure Reporter](https://allurereport.org/docs/) to translate Cucumber JSON test report to HTML test report.
 6. [eslint](https://eslint.org/) to find and fix problems with your JavaScript code.
-
+7. [prettier](https://www.npmjs.com/package/prettier) to enforces a uniform code style across teams.
+8. [husky](https://www.npmjs.com/package/husky) makes it easy to add Git hooks to your project.
 
 ## Opening and Setting up Project:
 

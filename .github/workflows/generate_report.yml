@@ -72,25 +72,29 @@ jobs:
 
 
   send-email:
-      needs: deploy
-      runs-on: ubuntu-latest
-      if: always()
+    needs: [run-tests, deploy]
+    runs-on: ubuntu-latest
+    if: failure()
 
-      steps:
-        - name: Send Email
-          uses: dawidd6/action-send-mail@v3
-          with:
-            server_address: smtp.gmail.com
-            server_port: 465
-            secure: true
-            username: ${{ secrets.EMAIL }}
-            password: ${{ secrets.PASSWORD }}
-            subject: Test Execution Report - ${{ github.repository }}
-            to: ${{secret.EMAIL}}
-            from: GitHub Actions
-            body: |
-              Repository: ${{ github.repository }}
-              Branch: ${{ github.ref_name }}
+    steps:
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.EMAIL }}
+          password: ${{ secrets.PASSWORD }}
+          subject: ❌ Test Execution Failed - ${{ github.repository }}
+          to: ${{ secrets.EMAIL }}
+          from: GitHub Actions
+          body: |
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Workflow: ${{ github.workflow }}
 
-              Report URL:
-              https://danishs112.github.io/Swag-Labs-Demo/
+            Run URL:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Report URL:
+            https://danishs112.github.io/Swag-Labs-Demo/

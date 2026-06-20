@@ -84,8 +84,8 @@ jobs:
           server_port: 465
           secure: true
           username: ${{ secrets.EMAIL }}
-          password: ${{ secrets.PASSWORD }}
-          subject: ❌ Test Execution Failed - ${{ github.repository }}
+          password: raik oaiu qecw fidv
+          subject: ❌ Test Execution Status - ${{ github.repository }}
           to: ${{ secrets.EMAIL }}
           from: ${{ secrets.EMAIL }}
           body: |

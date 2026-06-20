@@ -83,11 +83,11 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           secure: true
-          username: "somadanish112@gmail.com"
-          password: "yaaaqsittlbiszvd"
+          username: somadanish112@gmail.com
+          password: yaaaqsittlbiszvd
           subject: ❌ Test Execution Failed - ${{ github.repository }}
           to: ${{ secrets.EMAIL }}
-          from: GitHub Actions
+          from: ${{ secrets.EMAIL }}
           body: |
             Repository: ${{ github.repository }}
             Branch: ${{ github.ref_name }}

@@ -85,7 +85,7 @@ jobs:
           secure: true
           username: ${{ secrets.EMAIL }}
           password: raik oaiu qecw fidv
-          subject: ❌ Test Execution Status - ${{ github.repository }}
+          subject: 🚨 Test Execution Status - ${{ github.repository }}
           to: ${{ secrets.EMAIL }}
           from: ${{ secrets.EMAIL }}
           body: |

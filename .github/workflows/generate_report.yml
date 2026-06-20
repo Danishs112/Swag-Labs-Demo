@@ -30,6 +30,10 @@ jobs:
   run-tests:
     needs: install_and_lint
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        browser: [chrome, firefox]
     steps:
       - *node_setup
       - *node_install
@@ -65,3 +69,30 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
           force_orphan: false
+
+
+  send-email:
+      needs: publish-report
+      runs-on: ubuntu-latest
+      if: always()
+
+      steps:
+        - name: Send Email
+          uses: dawidd6/action-send-mail@v3
+          with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            secure: true
+            username: ${{ secrets.EMAIL }}
+            password: ${{ secrets.PASSWORD }}
+            subject: Test Execution Report - ${{ github.repository }}
+            to: ${{secret.EMAIL}}
+            from: GitHub Actions
+            body: |
+              Pipeline Status: ${{ needs.test.result }}
+
+              Repository: ${{ github.repository }}
+              Branch: ${{ github.ref_name }}
+
+              Report URL:
+              https://danishs112.github.io/Swag-Labs-Demo/

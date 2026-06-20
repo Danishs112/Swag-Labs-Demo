@@ -83,8 +83,8 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           secure: true
-          username: ${{ secrets.EMAIL }}
-          password: ${{ secrets.PASSWORD }}
+          username: somadanish112@gmail.com
+          password: yaaa qsit tlbi szvd
           subject: ❌ Test Execution Failed - ${{ github.repository }}
           to: ${{ secrets.EMAIL }}
           from: GitHub Actions
